@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huihui.intranet.mapper.NonNameBoardMapper" >
+	<select id="nonNameBoardList" resultType="NonNameBoard" resultMap="nonNameBoardResulteMap">
+		SELECT 
+			nonName_no, emp_id, nonName_title, nonName_content, nonName_date,
+			nonName_read_count, nonName_file, nonName_thank, nonName_bad
+		FROM nonNameBoard ORDER BY nonName_no DESC
+		LIMIT #{startRow}, #{num}
+	</select>
+	
+	<select id="getNonName" resultType="NonNameBoard" resultMap="nonNameBoardResulteMap">
+		SELECT * FROM nonNameBoard WHERE nonName_no = #{nonName_no}
+	</select>
+	
+	<insert id="insertNonName" parameterType="NonNameBoard" useGeneratedKeys="true" keyProperty="no">
+		INSERT INTO nonNameBoard (emp_id,nonName_title,nonName_content,nonName_date,nonName_read_count,nonName_file) 
+			VALUES(#{emp_id}, #{nonName_title}, #{nonName_content}, SYSDATE(), 
+			#{nonName_read_count}, #{nonName_file});
+	</insert>
+	
+	<select id="getNonNameCount" resultType="int">
+		SELECT COUNT(nonName_no) FROM nonNameBoard
+	</select>
+	
+	<resultMap id="nonNameBoardResulteMap" type="NonNameBoard">
+		<id property="nonNameNo" column="nonName_no"/>
+		<result property="empId" column="emp_id"/>
+		<result property="nonNameTitle" column="nonName_title"/>
+		<result property="nonNameContent" column="nonName_content"/>
+		<result property="nonNameDate" column="nonName_date"/>
+		<result property="nonNameReadCount" column="nonName_read_count"/>
+		<result property="nonNameFile" column="nonName_file"/>
+		<result property="nonNameThank" column="nonName_thank"/>
+		<result property="nonNameBad" column="nonName_bad"/>
+	</resultMap>
+	
+</mapper>	
+
+
+

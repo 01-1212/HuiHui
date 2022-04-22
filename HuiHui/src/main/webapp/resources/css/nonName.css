@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.nonNameList{
+	border : 1px solid gray;
+	margin : 0 auto;
+	margin-top : -660px;
+}
+.nonNameNo{
+	width : 10px;
+}
+.nonNameTitle{
+	width : 400px;
+}
+.nonDetail{
+	margin : 0 auto;
+	margin-top : -660px;
+	border : 1px solid gray;
+	width : 700px;
+}
+.1234{
+	border : 1px solid gray;
+	width : 700px;
+}
+.nonTitle{
+	font-size : 25px;
+}
+.nonSubTitle, .nonContent{
+	border-bottom : 1px solid gray;
+}
+.nonNameWrite{
+	text-align : right;
+	font-size : 12px;
+}
+.contentTextBox{
+	width : 600px;
+}
+.nonNameTitle{
+	margin-left : 0px;
+	
+}
+.nonNameBoardTitle{
+	width : 20px;
+}
